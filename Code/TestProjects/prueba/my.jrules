@@ -1,0 +1,125 @@
+ProjectName: 'prueba'
+
+/**
+ * Comunes
+ */
+//Name
+all Package satisfy name type=lowerCamelCase;
+
+exists Class 
+which modifiers:[(abstract)] 
+satisfy (name equal 'Casa' and name type= upperCamelCase);
+	
+exists Class 
+which modifiers: [(abstract)] 
+satisfy (name type= upperCamelCase and name equal 'Coche') ;
+	
+all Class 
+which have {
+	one Attribute 
+	satisfy name contain 'id'
+}
+satisfy name like 'producto', English;
+
+exists Package satisfy have {
+	all Class satisfy (have {
+		all Method satisfy name start 'get' or is constructor
+	}and name end 'Bean')
+};
+
+all Interface satisfy name start 'I';
+all Enum satisfy name type=startUpperCase;
+
+//JavaDoc
+all Interface satisfy JavaDoc;
+all Class satisfy JavaDoc @author @version;
+all Method satisfy JavaDoc @parameter @return @throws;
+all Attribute satisfy JavaDoc;
+all Enum satisfy JavaDoc;
+
+//No Empty
+all Package satisfy is not empty;
+all Interface satisfy is not empty;
+all Enum satisfy is not empty;
+all Class satisfy is not empty or (modifiers:[(abstract)] and is extended);
+all Method satisfy is not empty;
+
+
+//Modifiers
+
+//Contains
+exists Package satisfy have {
+	all Class satisfy (have {
+		all Method satisfy name start 'get' or is constructor
+	}and name end 'Bean')
+};
+
+all Interface satisfy have{
+	exists Method satisfy modifiers: [(abstract)]
+};
+
+exists Enum satisfy have {
+	exists Attribute satisfy modifiers: [(private) or (public)]
+};
+
+
+/**
+ * Interface
+ */
+//IsImplements
+
+all Interface satisfy is implemented;
+
+
+/**
+ * Class
+ */
+//IsInheritor
+exists Class satisfy is inheritor;
+
+//Implements
+	//si no pones min=0, el minimo es 1.
+all Class satisfy implements min=0 and max=2 interfaces;
+	//implementa una sola interfaz
+one Class satisfy implements max=1 interfaces;
+	//implementa al menos 2 interfaces.
+exists Class satisfy implements min=2 interfaces;
+	//implementa alguna interfaz
+exists Class satisfy implements interfaces;
+	//no implementan ninguna interfaz
+all Class satisfy implements min=0 and max=0 interfaces;
+
+//IsExtended
+all Class which modifiers:[(abstract)] satisfy is extended;
+
+/**
+ * Metodos
+ */
+//Constructor
+exists Method satisfy is constructor;
+
+	//Algunas de las propiedades de los singleton
+exists Class satisfy (have{
+	all Method which is constructor satisfy modifiers: [(private)]
+}and have{
+	exists Method satisfy modifiers:[(static and final)]
+}and have{
+	one Attribute satisfy modifiers:[(static and final)]
+});
+
+//Parameter
+exists Method satisfy numParameters=3;
+exists Method satisfy numParameters=3 and types=['int', 'string', 'Puerta'] ;
+
+//Return
+exists Method satisfy return type='boolean';
+
+/**
+ *Atributos 
+ */
+//Type
+exists Attribute satisfy type='Casa';
+one Attribute satisfy type='int';
+
+//Initialize
+all Attribute which type='List<?>' satisfy is initialize;

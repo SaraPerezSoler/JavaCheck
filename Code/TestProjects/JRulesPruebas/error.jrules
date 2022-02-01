@@ -1,0 +1,62 @@
+ProjectName: 'nombre'
+
+all Package satisfy JavaDoc;
+
+all Package which is implemented satisfy is not empty;
+all Attribute which is implemented satisfy is initialize;
+
+
+all Interface satisfy name type=upperCamelCase and like "Home";
+
+all Attribute satisfy name equal 'Juan', Spanish;
+all Class which name start 'get', English satisfy is extended;
+
+all Class satisfy JavaDoc @parameter @return @throws;
+
+all Interface which JavaDoc @parameter satisfy is implemented;
+
+all Enum which modifiers:[(abstract)] satisfy modifiers:[(Private)];
+
+all Enum which have{
+	one Class satisfy name type=lowerCase
+}satisfy is not empty;
+
+all Interface which have{
+	one Class satisfy name type=lowerCase
+}satisfy is not empty;
+
+all Class which have{
+	one Class satisfy name type=lowerCase
+}satisfy is not empty;
+
+all Package which have{
+	one Method satisfy name type=lowerCase
+}satisfy is not empty;
+
+all Attribute which have{
+	one Class satisfy name type=lowerCase
+}satisfy is not empty;
+
+
+
+exists Class which name type= lowerCamelCase;
+
+exists Package; 
+
+exists Class satisfy have{
+	exists Attribute
+};
+
+exists Class satisfy have{
+	exists Attribute which name type= lowerCamelCase
+};
+
+all Class satisfy implements min=3 and max=2 interfaces;
+	
+one Class satisfy implements max=-1 interfaces;
+	
+exists Class satisfy implements min=-2 interfaces;
+	
+exists Method satisfy numParameters=3 and types=[];
+exists Method satisfy numParameters=3 and types=["casa"];
+exists Method satisfy numParameters=3 and types=["casa", "casa","casa","casa"];

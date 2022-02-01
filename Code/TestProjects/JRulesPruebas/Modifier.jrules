@@ -1,0 +1,134 @@
+ProjectName: 'nombre'
+//Acceso satisfy
+all Method satisfy modifiers:[(Private)];
+all Method satisfy modifiers:[(Public)];
+all Method satisfy modifiers:[(Protected)];
+all Method satisfy modifiers:[(Default)];
+
+all Class satisfy modifiers:[(Default)];
+all Class satisfy modifiers:[(Public)];
+all Class satisfy modifiers:[(Private)];
+all Class satisfy modifiers:[(Protected)];
+
+all Interface satisfy modifiers:[(Default)];
+all Interface satisfy modifiers:[(Public)];
+all Interface satisfy modifiers:[(Private)];
+all Interface satisfy modifiers:[(Protected)];
+
+all Enum satisfy modifiers:[(Default)];
+all Enum satisfy modifiers:[(Public)];
+all Enum satisfy modifiers:[(Private)];
+all Enum satisfy modifiers:[(Protected)];
+
+all Attribute satisfy modifiers:[(Default)];
+all Attribute satisfy modifiers:[(Public)];
+all Attribute satisfy modifiers:[(Private)];
+all Attribute satisfy modifiers:[(Protected)];
+
+
+//Acceso filter
+all Method which modifiers:[(Private)] satisfy is constructor;
+all Method which modifiers:[(Public)] satisfy is constructor;
+all Method which modifiers:[(Protected)] satisfy is constructor;
+all Method which modifiers:[(Default)] satisfy is constructor;
+
+all Class which modifiers:[(Default)] satisfy is extended;
+all Class which modifiers:[(Public)] satisfy is extended;
+all Class which modifiers:[(Private)] satisfy is extended;
+all Class which modifiers:[(Protected)] satisfy is extended; 
+
+all Interface which modifiers:[(Default)] satisfy is implemented;
+all Interface which modifiers:[(Public)] satisfy is implemented;
+all Interface which modifiers:[(Private)] satisfy is implemented;
+all Interface which modifiers:[(Protected)] satisfy is implemented;
+
+all Enum which modifiers:[(Default)] satisfy name type=lowerCase;
+all Enum which modifiers:[(Public)] satisfy name type=lowerCase;
+all Enum which modifiers:[(Private)] satisfy name type=lowerCase;
+all Enum which modifiers:[(Protected)] satisfy name type=lowerCase;
+
+all Attribute which modifiers:[(Default)] satisfy is initialize;
+all Attribute which modifiers:[(Public)] satisfy is initialize;
+all Attribute which modifiers:[(Private)] satisfy is initialize;
+all Attribute which modifiers:[(Protected)]satisfy is initialize;
+
+
+//Synchronized
+all Method satisfy modifiers:[(synchronized)];
+all Method which modifiers:[(synchronized)] satisfy name type=lowerCamelCase;
+
+all Class satisfy modifiers:[(synchronized)];
+all Class which modifiers:[(synchronized)] satisfy name type=lowerCamelCase;
+
+all Interface satisfy modifiers:[(synchronized)];
+all Interface which modifiers:[(synchronized)] satisfy name type=lowerCamelCase;
+
+all Enum satisfy modifiers:[(synchronized)];
+all Enum which modifiers:[(synchronized)] satisfy name type=lowerCamelCase;
+
+all Attribute satisfy modifiers:[(synchronized)];
+all Attribute which modifiers:[(synchronized)] satisfy name type=lowerCamelCase;
+
+//abstract
+all Method satisfy modifiers:[(abstract)];
+all Method which modifiers:[(abstract)] satisfy name type=lowerCamelCase;
+
+all Class satisfy modifiers:[(abstract)];
+all Class which modifiers:[(abstract)] satisfy name type=lowerCamelCase;
+
+all Interface satisfy modifiers:[(abstract)];
+all Interface which modifiers:[(abstract)] satisfy name type=lowerCamelCase;
+
+all Enum satisfy modifiers:[(abstract)];
+all Enum which modifiers:[(abstract)] satisfy name type=lowerCamelCase;
+
+all Attribute satisfy modifiers:[(abstract)];
+all Attribute which modifiers:[(abstract)] satisfy name type=lowerCamelCase;
+
+//final
+all Method satisfy modifiers:[(final)];
+all Method which modifiers:[(final)] satisfy name type=lowerCamelCase;
+
+all Class satisfy modifiers:[(final)];
+all Class which modifiers:[(final)] satisfy name type=lowerCamelCase;
+
+all Interface satisfy modifiers:[(final)];
+all Interface which modifiers:[(final)] satisfy name type=lowerCamelCase;
+
+all Enum satisfy modifiers:[(final)];
+all Enum which modifiers:[(final)] satisfy name type=lowerCamelCase;
+
+all Attribute satisfy modifiers:[(final)];
+all Attribute which modifiers:[(final)] satisfy name type=lowerCamelCase;
+
+//final y abstract
+all Method satisfy modifiers:[(final and abstract)];
+all Method which modifiers:[(final and abstract)] satisfy name type=lowerCamelCase;
+
+all Class satisfy modifiers:[(final and abstract)];
+all Class which modifiers:[(final and abstract)] satisfy name type=lowerCamelCase;
+
+all Interface satisfy modifiers:[(final and abstract)];
+all Interface which modifiers:[(final and abstract)] satisfy name type=lowerCamelCase;
+
+all Enum satisfy modifiers:[(final and abstract)];
+all Enum which modifiers:[(final and abstract)] satisfy name type=lowerCamelCase;
+
+all Attribute satisfy modifiers:[(final and abstract)];
+all Attribute which modifiers:[(final and abstract)] satisfy name type=lowerCamelCase;
+
+//static
+all Method satisfy modifiers:[(static)];
+all Method which modifiers:[(static)] satisfy name type=lowerCamelCase;
+
+all Class satisfy modifiers:[(static)];
+all Class which modifiers:[(static)] satisfy name type=lowerCamelCase;
+
+all Interface satisfy modifiers:[(static)];
+all Interface which modifiers:[(static)] satisfy name type=lowerCamelCase;
+
+all Enum satisfy modifiers:[(static)];
+all Enum which modifiers:[(static)] satisfy name type=lowerCamelCase;
+
+all Attribute satisfy modifiers:[(static)];
+all Attribute which modifiers:[(static)] satisfy name type=lowerCamelCase;
